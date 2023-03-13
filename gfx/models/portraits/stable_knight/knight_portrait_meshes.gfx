@@ -1,0 +1,25 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "stable_knight_male_01_mesh"
+		file = "gfx/models/portraits/humanoid/humanoid_02_female_01.mesh"
+		animation = { id = "idle"	type = "human_male_01_happy_animation" }
+		animation = { id = "idle2"	type = "human_male_01_happy_2_animation" }
+		animation = { id = "sad"	type = "human_male_01_sad_animation" }
+		animation = { id = "sad2"	type = "human_male_01_sad_2_animation" }
+		scale = 0.94
+	}	
+
+ 	# pdxmesh = {
+	# 	name = "stable_knight_male_01_mesh"
+	# 	file = "gfx/models/portraits/necroid/necroid_13_portrait.mesh"
+	# 	animation = { id = "idle1"	type = "necroid_13_portrait_idle1_animation" }
+	# 	animation = { id = "idle2"	type = "necroid_13_portrait_idle2_animation" }
+	# 	animation = { id = "idle3"	type = "necroid_13_portrait_idle3_animation" }
+	# 	animation = { id = "idle4"	type = "necroid_13_portrait_idle4_animation" }
+	# 	scale = 1.0
+	# }
+
+
+		
+}

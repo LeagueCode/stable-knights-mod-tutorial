@@ -1,0 +1,150 @@
+portraits = {
+	knight_male = {	entity = "stable_knight_male_01_entity" attachment_selector = "no_texture" clothes_selector = "knight_clothes_male" 
+		greeting_sound = "humanoid_male_greeting_d"
+		character_textures = {
+			"gfx/models/portraits/stable_knight/male/male_knight_01.dds" 
+			"gfx/models/portraits/stable_knight/male/male_knight_02.dds" 
+			"gfx/models/portraits/stable_knight/male/male_knight_03.dds" 
+			"gfx/models/portraits/stable_knight/male/male_knight_04.dds"
+			"gfx/models/portraits/stable_knight/male/male_knight_05.dds" 
+		}
+	}
+	knight_female = {	entity = "stable_knight_male_01_entity" attachment_selector = "no_texture" clothes_selector = "knight_clothes_female" 
+		greeting_sound = "humanoid_portrait_a_female"   
+		character_textures = {
+			"gfx/models/portraits/stable_knight/female/female_knight_01.dds"
+			"gfx/models/portraits/stable_knight/female/female_knight_02.dds"
+			"gfx/models/portraits/stable_knight/female/female_knight_03.dds"
+			"gfx/models/portraits/stable_knight/female/female_knight_04.dds"
+			"gfx/models/portraits/stable_knight/female/female_knight_05.dds" 
+		}
+	}
+}
+
+
+portrait_groups = {
+
+	knight_1 = {
+		default = knight_male
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = {
+						OR = {
+							gender = male
+							gender = indeterminable
+						}
+					}
+				}
+				portraits = {
+					knight_male
+				}
+			}
+			add = {
+				trigger = {
+					ruler = {
+						OR = {
+							gender = female
+							gender = indeterminable
+						}
+					}
+				}
+				portraits = {
+					knight_female
+				}
+			}
+		}
+
+		leader = {
+			add = {
+				trigger = {
+					OR = {
+						gender = male
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					knight_male
+				}
+			}
+			add = {
+				trigger = {
+					OR = {
+						gender = female
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					knight_female
+				}
+			}
+		}
+
+		ruler = {
+			add = {
+				trigger = {
+					OR = {
+						gender = male
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					knight_male
+				}
+			}
+			add = {
+				trigger = {
+					OR = {
+						gender = female
+						gender = indeterminable
+					}
+				}
+				portraits = {
+					knight_female
+				}
+			}
+		}
+
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					knight_female
+				}
+			}
+			add = {
+				trigger = {
+					exists = species
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					knight_male
+				}
+			}
+		}
+
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				trigger = {
+					NOT = { species = { species_gender = male } }
+				}
+				portraits = {
+					knight_female
+				}
+			}
+			add = {
+				trigger = {
+					NOT = { species = { species_gender = female } }
+				}
+				portraits = {
+					knight_male
+				}
+			}
+		}
+	}
+}

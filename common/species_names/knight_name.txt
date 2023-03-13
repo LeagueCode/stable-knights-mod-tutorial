@@ -1,0 +1,11 @@
+### KNIGHT
+
+KNIGHT =  {
+	knight_1 =  {
+		name = SPEC_KNIGHT_name
+		plural = SPEC_KNIGHT_plural
+		home_planet = SPEC_KNIGHT_planet
+		home_system = SPEC_KNIGHT_system
+		name_list =  "HUMAN1"
+	}
+}
